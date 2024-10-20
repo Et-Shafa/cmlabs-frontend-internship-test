@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Detail</title>
+    <script src="https://kit.fontawesome.com/707cfdb296.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            let currLoc = $(location).attr("pathname");
+            console.log(currLoc);
+            // $.ajax({
+            //     // url: 'www.themealdb.com/api/json/v1/1/filter.php?c=' + category,
+            //     url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=beef',
+            //     method: 'get',
+            //     success: function (data) {
+            //         console.log(data.meals);
+            //         // for (let i = 0; i < Object.keys(data.categories).length; i++) {
+            //         //     const category = data.categories[i];
+            //         //     console.log(category);
+            //         //     $('.card-group').append('<div id="' + category["strCategoryThumb"] + '" class="col-md-3"> <div class="card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></div>')
+
+            //         // }
+            //     },
+            //     error: function (err) {
+            //         console.log(err);
+            //     }
+
+            // })
+
+
+        });
+    </script>
+    <style>
+        nav ol{
+            margin: 50px 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><i class="fa-solid fa-house" style="margin-right: 10px;"></i><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+    </nav>
+
+
+</body>
+
+</html>

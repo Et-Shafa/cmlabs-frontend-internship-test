@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals Detail</title>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'www.themealdb.com/api/json/v1/1/lookup.php?i=' + mealId,
+                method: 'get',
+                success: function (data) {
+                    for (let i = 0; i < Object.keys(data.categories).length; i++) {
+                        const category = data.categories[i];
+                        console.log(category);
+                        $('.card-group').append('<div id="' + category["strCategoryThumb"] + '" class="col-md-3"> <div class="card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></div>')
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+
+            })
+
+
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

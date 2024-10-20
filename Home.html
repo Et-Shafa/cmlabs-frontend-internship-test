@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://www.themealdb.com/api/json/v1/1/categories.php',
+                method: 'get',
+                success: function (data) {
+                    for (let i = 0; i < Object.keys(data.categories).length; i++) {
+                        const category = data.categories[i];
+                        // console.log(category);
+                        // $('.card-group').append('<div class="col-md-3"><a style="text-decoration: none" href="CategoryDetail.html/' + category["strCategory"] + '"> <div id="' + category["strCategory"] + '" class="category card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></a></div>')
+                        $('.card-group').append('<div class="col-md-3"><a style="text-decoration: none" href="CategoryDetail.html"> <div id="' + category["strCategory"] + '" class="category card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></a></div>')
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+
+            })
+
+            $("div .category").click(function () {
+                // var categoryName = $(this).attr('id');
+                // console.log(categoryName);
+                console.log("Berhasil");
+            });
+
+
+        });
+    </script>
+    <style>
+        div .card-group {
+            margin: 50px 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid py-5 bg-light d-flex flex-column justify-content-center">
+        <p class="col-md-8 fs-4 align-self-center text text-center">mealapp API website</p>
+        <h1 class="display-5 fw-bold align-self-center">See All The Delicious Food</h1>
+    </div>
+
+    <div class="px-20">
+        <div class="card-group row row-cols-1 row-cols-md-3 g-4 p-20px">
+        </div>
+    </div>
+</body>
+
+</html>
