@@ -14,8 +14,8 @@
                     for (let i = 0; i < Object.keys(data.categories).length; i++) {
                         const category = data.categories[i];
                         // console.log(category);
-                        // $('.card-group').append('<div class="col-md-3"><a style="text-decoration: none" href="CategoryDetail.html/' + category["strCategory"] + '"> <div id="' + category["strCategory"] + '" class="category card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></a></div>')
-                        $('.card-group').append('<div class="col-md-3"><a style="text-decoration: none" href="CategoryDetail.html"> <div id="' + category["strCategory"] + '" class="category card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></a></div>')
+                        $('.card-group').append('<div class="col-md-3"><a style="text-decoration: none" href="category/' + category["strCategory"] + '"> <div id="' + category["strCategory"] + '" class="category card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></a></div>')
+                        // $('.card-group').append('<div class="col-md-3"><a style="text-decoration: none" href="CategoryDetail.html"> <div id="' + category["strCategory"] + '" class="category card rounded-5" style="height:110px; background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + category["strCategoryThumb"] + ') no-repeat center; background-size: cover;"> <div class="card-body d-flex align-items-center justify-content-center"> <h5 class="card-title text-center text-white">' + category["strCategory"] + '</div></h5></div></a></div>')
 
                     }
                 },
@@ -24,14 +24,6 @@
                 }
 
             })
-
-            $("div .category").click(function () {
-                // var categoryName = $(this).attr('id');
-                // console.log(categoryName);
-                console.log("Berhasil");
-            });
-
-
         });
     </script>
     <style>
@@ -48,7 +40,7 @@
     </div>
 
     <div class="px-20">
-        <div class="card-group row row-cols-1 row-cols-md-3 g-4 p-20px">
+        <div class="card-group row row-cols-2 row-cols-md-3 g-4 p-20px">
         </div>
     </div>
 </body>

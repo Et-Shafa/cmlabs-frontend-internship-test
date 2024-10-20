@@ -1,9 +1,9 @@
 $(function() {
     $("section").load("Home.html");
     $("header").load("Header.html");
+
+    $("div #pasta").click(function() {
+        $("section").load("CategoryDetail.html");
+    });
   });
 
-// $('#link').click(function() {
-//     window.history.pushState('obj', 'newtitle', '/abc');
-//     return false;
-// });
